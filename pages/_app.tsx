@@ -20,7 +20,7 @@ const NextApp = ({
     </Head>
     <React.StrictMode>
       <div id="body">
-        <Container fluid className="h-100 p-0 position-relative">
+        <Container fluid className="h-100 p-0 position-relative p-3">
           <Component {...pageProps}/>
         </Container>
       </div>

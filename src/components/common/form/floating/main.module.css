@@ -1,0 +1,12 @@
+input.override-autofill:-webkit-autofill, input.override-autofill:-webkit-autofill:hover, input.override-autofill:-webkit-autofill:focus, input.override-autofill:-webkit-autofill:active,
+select.override-autofill:-webkit-autofill,
+select.override-autofill:-webkit-autofill:hover,
+select.override-autofill:-webkit-autofill:focus,
+select.override-autofill:-webkit-autofill:active {
+  -webkit-text-fill-color: white !important;
+  caret-color: white;
+  transition: background-color 2147483647s ease-in-out 0s;
+  transition-delay: 2147483647s;
+}
+
+/*# sourceMappingURL=main.module.css.map */
