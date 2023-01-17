@@ -46,9 +46,9 @@ export const Main = () => {
   };
 
   return (
-    <Row>
+    <Row className="h-100">
       <Col xs={1} md={3}/>
-      <Col xs={10} md={6}>
+      <Col xs={10} md={6} className="align-self-center">
         <AjaxForm data={data} setData={setData} onSubmit={onSubmit}>
           <FloatingInput
             type="number"
