@@ -4,7 +4,7 @@ import {apiResponseSchema, ApiResponseSchema} from './schema';
 import {NextApiRoute} from '../types';
 
 
-export const apiRouteResponse: NextApiRoute<ApiResponseSchema, string> = async (
+export const apiRouteCallback: NextApiRoute<ApiResponseSchema, string> = async (
   request,
   reply,
 ) => {

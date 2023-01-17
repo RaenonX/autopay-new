@@ -1,4 +1,4 @@
-import {apiRouteResponse} from '../../server/routes/callback/main';
+import {apiRouteCallback} from '../../server/routes/callback/main';
 
 
-export default apiRouteResponse;
+export default apiRouteCallback;
