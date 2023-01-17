@@ -7,6 +7,9 @@ apps:
     # Execution configs
     exec_mode: 'cluster'
     instances: 3
+    # Environments
+    env:
+      PORT: '3877'
     # Others
     cron_restart: '0 0 */3 * *'  # Restart every 3 days
     time: true  # Log timestamp in logs
