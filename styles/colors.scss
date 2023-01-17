@@ -1,0 +1,65 @@
+@use "sass:color";
+
+// region New theme color
+
+$color-bw-0: #000;
+$color-bw-7: #070707;
+$color-bw-14: #0e0e0e;
+$color-bw-20: #141414;
+$color-bw-32: #202020;
+$color-bw-50: #323232;
+$color-bw-80: #505050;
+$color-bw-101: #656565;
+$color-bw-140: #8c8c8c;
+$color-bw-170: #aaa;
+$color-bw-215: #d7d7d7;
+$color-bw-240: #f0f0f0;
+$color-bw-255: #fff;
+$color-theme-dark: #1184c4;
+$color-theme-light: #fff;
+$color-orange: #ff6a1e;
+$color-dark-primary: #701dc9;
+$color-dark-cyan: #042a3b;
+$color-dark-info: #1172a7;
+$color-dark-success: #0f7c49;
+$color-dark-warning: #8a6a0b;
+$color-dark-orange: #a6530f;
+$color-dark-danger: #c91d2e;
+$color-dark-red: #600000;
+
+// endregion
+
+// region Overridden theme color
+
+$color-primary: #9a39ff;
+$color-secondary: #4e5356;
+$color-success: #1dc577;
+$color-danger: #ff4457;
+$color-mild-info: #0aaecf;
+
+// endregion
+
+// region Custom theme color
+
+$color-safe: #33ec57;
+$color-warning: #f5d937;
+$color-danger-custom: #ff3d3a;
+$color-neutral: #d7d7d7;
+$color-neutral-weak: #cbcbcb;
+$color-up: #ef5350;
+$color-down: #26a69a;
+$color-up-strong: #ed213a;
+$color-down-strong: #00e071;
+
+// endregion
+
+// region App color
+
+$color-body: $color-bw-255;
+$color-body-bg: #181818;
+$color-hr: color.change($color-bw-170, $alpha: 0.5);
+$color-section: color.adjust($color-body-bg, $lightness: 3%);
+$color-section-border: color.adjust($color-body-bg, $lightness: 15%);
+$color-chart-status-bg: rgba(5 5 5 / 77%);
+
+// endregion

@@ -1,0 +1,12 @@
+apps:
+  - name: 'autopay-new'
+    # Entry point
+    # `npm start` won't work here - or additional work required
+    script: './node_modules/next/dist/bin/next'
+    args: 'start'
+    # Execution configs
+    exec_mode: 'cluster'
+    instances: 3
+    # Others
+    cron_restart: '0 0 */3 * *'  # Restart every 3 days
+    time: true  # Log timestamp in logs

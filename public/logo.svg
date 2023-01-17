@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 width="595.28px" height="595.28px" viewBox="0 0 595.28 595.28" enable-background="new 0 0 595.28 595.28" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="26.7734" y1="276.5186" x2="495.0078" y2="276.5186">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#DF9114"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" d="M371.901,37.096c-24.023-6.979-47.986-10.323-74.261-10.323
+	c-149.596,0-270.867,121.271-270.867,270.867c0,96.125,50.076,180.547,125.56,228.624v-19.767
+	C86.378,460.527,43.212,384.13,43.212,297.64c0-140.517,113.91-254.427,254.425-254.427c18.044,0,35.645,1.891,52.627,5.463v350.331
+	h5.315h16.298h123.13v-21.612h-123.13"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="182.9546" y1="307.9277" x2="568.5068" y2="307.9277">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#DF9114"/>
+</linearGradient>
+<path fill="url(#SVGID_2_)" d="M182.955,543.098c35.494,17.081,72.661,25.409,114.686,25.409
+	c149.596,0,270.867-121.271,270.867-270.867c0-112.862-69.033-209.588-167.173-250.292v17.91
+	c88.825,39.694,150.733,128.8,150.733,232.382c0,140.515-113.914,254.428-254.43,254.428c-32.842,0-64.23-6.226-93.051-17.557
+	V303.818l95.188,95.189l15.281-15.283l-97.602-97.603l97.604-97.603l-15.283-15.282l-95.188,95.188v-95.188h-21.612"/>
+</svg>
