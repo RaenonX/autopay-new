@@ -1,16 +1,20 @@
 import React from 'react';
 
+import axios, {AxiosResponse} from 'axios';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 import {OrderData} from './type';
+import {RequestSchema} from '../../../server/routes/request/schema/request';
+import {ResponseSchema} from '../../../server/routes/request/schema/response';
 import {FloatingInput} from '../../components/common/form/floating/input';
 import {TextWithLoading} from '../../components/common/loading/loading/text';
 import {AjaxForm} from '../../components/form/main';
+import {API_REQUEST} from '../../const';
 
 
-const AMOUNT_MINIMUM = 500;
+const AMOUNT_MINIMUM = 200;
 
 export const Main = () => {
   const [data, setData] = React.useState<OrderData>({
@@ -25,10 +29,20 @@ export const Main = () => {
   const isAmountValid = amount >= AMOUNT_MINIMUM;
   const isNameValid = !!name;
   const isMobileValid = mobile.length === 10;
-  const isSubmitDisabled = !isMobileValid || !isNameValid || !isAmountValid;
+  const isSubmitDisabled = !isMobileValid || !isNameValid || !isAmountValid || disabled;
 
   const onSubmit = async () => {
-    console.log(window.location.hostname);
+    const response = await axios.post<RequestSchema, AxiosResponse<ResponseSchema>>(
+      API_REQUEST,
+      {amount, mobile, name},
+    );
+
+    if (response.data.success) {
+      const {url} = response.data;
+      window.open(url, '_blank');
+    } else {
+      setData({...data, error: response.data.message});
+    }
   };
 
   return (
@@ -38,7 +52,7 @@ export const Main = () => {
         <AjaxForm data={data} setData={setData} onSubmit={onSubmit}>
           <FloatingInput
             type="number"
-            min={500}
+            min={AMOUNT_MINIMUM}
             label="金額"
             value={amount}
             className="mb-3"

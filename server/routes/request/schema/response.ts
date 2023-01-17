@@ -11,6 +11,11 @@ export const responseSchema = asConst({
           description: 'Order successfully created.',
           const: true,
         },
+        orderNo: {
+          title: 'Order ID',
+          description: 'Created order ID.',
+          type: 'string',
+        },
         url: {
           title: 'Payment Redirection URL',
           description: 'Order payment redirection URL.',
@@ -19,6 +24,7 @@ export const responseSchema = asConst({
       },
       required: [
         'success',
+        'orderNo',
         'url',
       ],
       additionalProperties: false,

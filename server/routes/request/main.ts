@@ -26,12 +26,13 @@ export const apiRouteRequest: NextApiRoute<RequestSchema, ResponseSchema> = asyn
     return;
   }
 
+  const apiRequest = makeApiRequestBody(
+    request.body,
+    requestIp.getClientIp(request),
+  );
   const response = await axios.post<ApiRequestSchema, AxiosResponse<ApiResponseSchema>>(
     API_PATH_REQUEST,
-    makeApiRequestBody(
-      request.body,
-      requestIp.getClientIp(request),
-    ),
+    apiRequest,
   );
 
   const code = response.data.code;
@@ -48,6 +49,7 @@ export const apiRouteRequest: NextApiRoute<RequestSchema, ResponseSchema> = asyn
 
   reply.send({
     success: true,
+    orderNo: apiRequest.orderNo,
     url: response.data.detail.PayURL,
   });
 };
