@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "eslint src --ext .ts,.tsx",
+    "lint": "eslint src server pages --ext .ts,.tsx",
     "lint:css": "stylelint **/*.scss",
     "start": "next start"
   },
