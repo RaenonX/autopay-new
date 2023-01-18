@@ -9,9 +9,9 @@ export const requestSchema = asConst({
       description: 'Amount SCHEDULED to pay. Actual amount paid to be returned in the callback.',
       type: 'number',
     },
-    name: {
-      title: 'Name',
-      description: 'Name of the order creator.',
+    accountId: {
+      title: 'Account ID',
+      description: 'Account ID of the order creator.',
       type: 'string',
     },
     mobile: {
@@ -23,7 +23,7 @@ export const requestSchema = asConst({
   },
   required: [
     'amount',
-    'name',
+    'accountId',
     'mobile',
   ],
   additionalProperties: false,

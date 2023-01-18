@@ -21,20 +21,20 @@ export const Main = () => {
     disabled: false,
     error: '',
     amount: AMOUNT_MINIMUM,
+    accountId: '',
     mobile: '',
-    name: '',
   });
 
-  const {amount, mobile, name, disabled} = data;
+  const {amount, mobile, accountId, disabled} = data;
   const isAmountValid = amount >= AMOUNT_MINIMUM;
-  const isNameValid = !!name;
+  const isAccountIdValid = !!accountId;
   const isMobileValid = mobile.length === 10;
-  const isSubmitDisabled = !isMobileValid || !isNameValid || !isAmountValid || disabled;
+  const isSubmitDisabled = !isMobileValid || !isAccountIdValid || !isAmountValid || disabled;
 
   const onSubmit = async () => {
     const response = await axios.post<RequestSchema, AxiosResponse<ResponseSchema>>(
       API_REQUEST,
-      {amount, mobile, name},
+      {amount, mobile, accountId},
     );
 
     if (response.data.success) {
@@ -68,15 +68,15 @@ export const Main = () => {
             required
           />
           <FloatingInput
-            label="名稱"
-            value={name}
+            label="帳號 ID"
+            value={accountId}
             className="mb-3"
             onChange={({target}) => setData({
               ...data,
-              name: target.value || '',
+              accountId: target.value || '',
             })}
-            isInvalid={!isNameValid}
-            feedbackOnInvalid="請輸入名稱。"
+            isInvalid={!isAccountIdValid}
+            feedbackOnInvalid="請輸入帳號 ID。注意，這並非您的遊戲名稱。"
             required
           />
           <FloatingInput

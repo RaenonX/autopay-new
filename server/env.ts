@@ -13,3 +13,11 @@ export const API_MERCHANT_CODE = env.get('API_MERCHANT_CODE').required().asStrin
 export const API_CALLBACK_URL = env.get('API_CALLBACK_URL').required().asString();
 
 export const API_REDIRECT_URL = env.get('API_REDIRECT_URL').required().asString();
+
+export const MARIA_USER = env.get('MARIA_USER').required().asString();
+
+export const MARIA_DB = env.get('MARIA_DB').required().asString();
+
+export const MARIA_PASSWORD = env.get('MARIA_PASSWORD').required().asString();
+
+export const ORDER_TABLE_PREFIX = env.get('ORDER_TABLE_PREFIX').required().asString();

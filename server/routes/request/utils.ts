@@ -8,7 +8,7 @@ import {generateOrderSignature} from '../../utils/order';
 
 
 export const makeApiRequestBody = (
-  {amount, name, mobile}: RequestSchema,
+  {amount, accountId, mobile}: RequestSchema,
   clientIp: string | null,
 ): ApiRequestSchema => {
   const notes = `Order IP: ${clientIp}`;
@@ -25,7 +25,7 @@ export const makeApiRequestBody = (
     payType: 2,
     noticeUrl: API_CALLBACK_URL,
     returnUrl: API_REDIRECT_URL,
-    customName: name,
+    customName: accountId,
     mobile: mobile,
     notes,
   };

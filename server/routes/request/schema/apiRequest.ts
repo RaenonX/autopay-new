@@ -36,9 +36,9 @@ export const apiRequestSchema = asConst({
     },
     payType: {
       title: 'Payment Type',
-      description: 'Enum of the payment type. Currently only 2 (Supermarket) is allowed.',
+      description: 'Enum of the payment type. Currently only 2 (Convenience Store / CVS) is allowed.',
       enum: [
-        2, // Supermarket
+        2, // Convenience Store
       ],
     },
     noticeUrl: {
