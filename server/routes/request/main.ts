@@ -61,7 +61,7 @@ export const apiRouteRequest: NextApiRoute<RequestSchema, ResponseSchema> = asyn
     return;
   }
 
-  const {accountId} = request.body;
+  const {mobile, accountId} = request.body;
   const {orderNo, sign, bizAmt, notes, payType} = apiRequest;
 
   await recordPendingTxN({
@@ -71,6 +71,7 @@ export const apiRouteRequest: NextApiRoute<RequestSchema, ResponseSchema> = asyn
     tsCreated: apiTimestampToDate(apiRequest.date),
     orderAmount: bizAmt,
     originIp,
+    mobile,
     note: notes || '',
     paymentType: payTypeMapping[payType],
   });

@@ -1,6 +1,8 @@
 import {validate} from 'jsonschema';
 
 import {apiResponseSchema, ApiResponseSchema} from './schema';
+import {recordCompletedTxN} from '../../controller/completed/main';
+import {apiTimestampToDate} from '../../utils/date';
 import {NextApiRoute} from '../types';
 
 
@@ -15,14 +17,15 @@ export const apiRouteCallback: NextApiRoute<ApiResponseSchema, string> = async (
     return;
   }
 
-  // TODO: Further actions on order completed
-  console.log(`Order No. : ${request.body.orderNo}`);
-  console.log(`Biz $     : ${request.body.bizAmt}`);
-  console.log(`Status    : ${request.body.status}`);
-  console.log(`Version   : ${request.body.version}`);
-  console.log(`Date      : ${request.body.date}`);
-  console.log(`Signature : ${request.body.sign}`);
-  console.log(`Extra     : ${request.body.extra}`);
+  const {orderNo, sign, date, bizAmt, extra} = request.body;
+
+  await recordCompletedTxN({
+    orderNo,
+    signature: sign,
+    tsCompleted: apiTimestampToDate(date),
+    paidAmount: bizAmt,
+    message: extra || '',
+  });
 
   // Required return by the API.
   reply.send('SUCCESS');

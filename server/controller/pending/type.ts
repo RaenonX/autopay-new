@@ -8,6 +8,7 @@ export type PendingOrder = {
   tsCreated: Date,
   orderAmount: number,
   originIp: string,
+  mobile: string,
   note: string,
   paymentType: PaymentType,
 };

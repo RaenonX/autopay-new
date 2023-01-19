@@ -16,6 +16,7 @@ export const createPendingTxNTable = async (conn: PoolConnection) => {
       ts_created   DATETIME                NOT NULL COMMENT 'Order creation timestamp',
       amount_order DECIMAL(11, 2)          NOT NULL COMMENT 'Amount on order',
       origin_ip    VARCHAR(45)             NOT NULL COMMENT 'Order origin IP',
+      mobile       VARCHAR(15)             NOT NULL COMMENT 'Order creator mobile number',
       note         VARCHAR(250) DEFAULT '' NOT NULL COMMENT 'Order note',
       payment_type SMALLINT                NOT NULL COMMENT 'Order payment type',
       CONSTRAINT order_pending_lookup_index
@@ -33,6 +34,7 @@ export const recordPendingTxN = async ({
   tsCreated,
   orderAmount,
   originIp,
+  mobile,
   note,
   paymentType,
 }: PendingOrder) => {
@@ -42,9 +44,9 @@ export const recordPendingTxN = async ({
     await conn.query(
       `
         INSERT INTO order_pending 
-          (order_no, account_id, signature, ts_created, amount_order, origin_ip, note, payment_type)
+          (order_no, account_id, signature, ts_created, amount_order, origin_ip, mobile, note, payment_type)
         VALUES 
-          (?, ?, ?, ?, ?, ?, ?, ?);
+          (?, ?, ?, ?, ?, ?, ?, ?, ?);
       `,
       [
         orderNo,
@@ -53,6 +55,7 @@ export const recordPendingTxN = async ({
         jsDateToSqlDate(tsCreated),
         orderAmount,
         originIp,
+        mobile,
         note,
         paymentTypeMapping[paymentType],
       ],
